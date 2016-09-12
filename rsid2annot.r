@@ -139,7 +139,7 @@ rsid2annot <- function(rsids=NULL, file=NULL) {
 # run rsid2annot
                                                                          
 files <- list.files()
-files <- files[grep(".*.csv$", files)] # list of .csv files
+files <- files[grep(".*.csv$", files)] # list of .Rdata files
 filenames <- gsub(".csv$", "", files)
 for (i in 1:length(files)) {
   rsids <- read.csv(files[i])
