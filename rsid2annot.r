@@ -11,7 +11,7 @@ remDr$open()
 remDr$close()
 
 # setwd("C:/Users/Eugene/Desktop/") # for laptop
-setwd('C:/Users/Eugene/Documents/Dropbox/Apps/n0/RMS-IGFoutput/2016-09-12/rsid.csv') # for home-desktop
+setwd('C:/Users/Eugene/Documents/Dropbox/Apps/n0/RMS-IGFoutput/2016-07-29/rsid.csv') # for home-desktop
 # setwd("C:/Users/!eugene_konagaya/Desktop")
 
 #  "rsid2annot()" function
@@ -139,6 +139,7 @@ rsid2annot <- function(rsids=NULL, file=NULL) {
 # run rsid2annot
                                                                          
 files <- list.files()
+files <- files[grep(".*.csv$", files)] # list of .Rdata files
 filenames <- gsub(".csv$", "", files)
 for (i in 1:length(files)) {
   rsids <- read.csv(files[i])
